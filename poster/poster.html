@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shree Samarth Krupa Digital Solutions</title>
+    <title>CodexiTech | AI & Automation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -36,18 +36,37 @@
         /* Header Section */
         .header {
             background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(231, 76, 60, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
             color: white;
             padding: 35px 45px 30px;
             position: relative;
             border-bottom: 5px solid #3498db;
+            overflow: hidden;
         }
-        
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="10" cy="50" r="0.5" fill="rgba(255,255,255,0.02)"/><circle cx="90" cy="50" r="0.5" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
         .logo-container {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
         }
-        
+
         .logo-circle {
             width: 90px;
             height: 90px;
@@ -57,11 +76,40 @@
             align-items: center;
             justify-content: center;
             margin-right: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.2),
+                0 0 30px rgba(52, 152, 219, 0.3);
             border: 3px solid #3498db;
             overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
         }
-        
+
+        .logo-circle:hover {
+            transform: scale(1.05);
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(52, 152, 219, 0.5);
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3498db, #e74c3c, #f39c12);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-circle:hover::before {
+            opacity: 0.7;
+        }
+
         .logo-text {
             font-family: 'Arial', sans-serif;
             font-size: 26px;
@@ -69,21 +117,23 @@
             color: #2c3e50;
             letter-spacing: 1px;
         }
-        
+
         .agency-name {
             font-size: 36px;
             font-weight: 800;
             letter-spacing: 1.5px;
             line-height: 1.1;
             color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
-        
+
         .agency-subtitle {
             font-size: 20px;
             color: #3498db;
             font-weight: 600;
             margin-top: 8px;
             letter-spacing: 1px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .tagline {
@@ -339,11 +389,11 @@
         <div class="header">
             <div class="logo-container">
                 <div class="logo-circle">
-                    <img src="logo.png" alt="Logo" style="width: 90%; height: 90%; border-radius: 50%; object-fit: cover;">
+                    <img src="logop.png" alt="Logo" style="width: 90%; height: 90%; border-radius: 50%; object-fit: cover;">
                 </div>
                 <div>
-                    <div class="agency-name">SHREE SAMARTH KRUPA</div>
-                    <div class="agency-subtitle">DIGITAL SOLUTIONS</div>
+                    <div class="agency-name">CodexiTech</div>
+                    <div class="agency-subtitle">AI & Automation</div>
                 </div>
             </div>
             
@@ -443,9 +493,10 @@
             <div class="cta-section">
                 <div class="website-info">
                     <div class="website-title">Visit Our Website For Complete Digital Solutions</div>
-                    <a href="https://shreesamarthkrupadigitalsolution.vercel.app/" class="website-url" target="_blank">
-                        shreesamarthkrupadigitalsolution.vercel.app
+                    <a href="https://codexitech.vercel.app/" class="website-url" target="_blank">
+                        codexitech.vercel.app
                     </a>
+                    <p style="font-size: 14px; color: #ecf0f1; margin-top: 10px;"><strong>CEO:</strong> <span style="color: #3498db; font-weight: bold;">Tanisha Badgujar</span>, AIML Engineer</p>
                 </div>
                 
                 <a href="https://shreesamarthkrupadigitalsolution.vercel.app/" class="contact-button" target="_blank">
