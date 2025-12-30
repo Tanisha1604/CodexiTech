@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodexiTech | AI & Automation</title>
     <link rel="icon" type="image/png" href="fevicon2.png">
 
@@ -63,10 +63,11 @@
             background: rgba(15, 15, 20, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 20px; padding: 2rem;
-            transition: 0.3s; h-full;
+            transition: 0.3s; height: 100%;
         }
-        .bento-card:hover { background: rgba(25, 25, 35, 0.8); border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
+        .bento-card:hover { background: rgba(25, 25, 35, 0.8); border-color: rgba(255,255,255,0.2); transform: translateY(-5px); box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
 
         .service-list { margin-top: 15px; }
         .service-list li {
@@ -89,6 +90,8 @@
         .minimal-input:focus { border-color: var(--primary-purple); }
 
         .section-padding { padding: 120px 5%; }
+
+        #project-visual img { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
 
         @media (max-width: 768px) {
             h1 { font-size: 3rem !important; }
@@ -256,11 +259,11 @@
                 <div class="w-full lg:w-1/2">
                     <h2 class="text-4xl font-bold mb-12 brand-font">Selected Projects</h2>
                     
-                    <div class="client-row" onmouseenter="changeVisual('swami')">
+                    <div class="client-row" onmouseenter="changeVisual('swami')" onclick="window.open('https://www.swamirenewable.com/', '_blank')" style="cursor: pointer;">
                         <div class="flex items-center gap-6"><span class="text-gray-500 font-mono">01</span><span class="text-2xl font-bold">Swami Renewable</span></div>
                         <div class="hidden md:flex"><span class="client-tag">Web</span><span class="client-tag">Auto</span></div>
                     </div>
-                    <div class="client-row" onmouseenter="changeVisual('brand')">
+                    <div class="client-row" onmouseenter="changeVisual('brand')" onclick="window.open('https://brand-persona-xi.vercel.app/', '_blank')" style="cursor: pointer;">
                         <div class="flex items-center gap-6"><span class="text-gray-500 font-mono">02</span><span class="text-2xl font-bold">Brand Persona</span></div>
                         <div class="hidden md:flex"><span class="client-tag">Design</span><span class="client-tag">AI</span></div>
                     </div>
@@ -354,8 +357,8 @@
             visual.style.opacity = '0.7'; visual.style.transform = 'scale(0.98)';
             setTimeout(() => {
                 let html = '';
-                if(client === 'swami') html = `<div class="text-center z-10"><div class="text-6xl mb-4">⚡</div><h3 class="text-2xl font-bold">Swami Renewable</h3></div><div class="absolute inset-0 bg-gradient-to-tr from-green-600/20 to-transparent opacity-50"></div>`;
-                else if(client === 'brand') html = `<div class="text-center z-10"><div class="text-6xl mb-4">🎨</div><h3 class="text-2xl font-bold">Brand Persona</h3></div><div class="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-transparent opacity-50"></div>`;
+                if(client === 'swami') html = `<img src="Swami_renewable.png" alt="Swami Renewable" class="w-full h-full object-contain rounded-2xl"><div class="absolute inset-0 bg-gradient-to-tr from-green-600/20 to-transparent opacity-50"></div>`;
+                else if(client === 'brand') html = `<img src="brand_persona.png" alt="Brand Persona" class="w-full h-full object-contain rounded-2xl"><div class="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-transparent opacity-50"></div>`;
                 else html = `<div class="text-center z-10"><div class="text-6xl mb-4">🛡️</div><h3 class="text-2xl font-bold">OWASP</h3></div><div class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent opacity-50"></div>`;
                 visual.innerHTML = html; visual.style.opacity = '1'; visual.style.transform = 'scale(1)';
             }, 200);
